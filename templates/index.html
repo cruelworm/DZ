@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+    <div class="askdrob-main-question">
+                    <div class="row">
+                            <h3>Офисы</h3>
+                    </div>
+    </div>
+    <div class="answers">
+
+    {% for OfficesModel in Offices %}
+        {% include "include/office.html" %}
+    {% endfor %}
+
+    <a href="{% url 'office_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> </a>
+
+
+    <a href="{% url 'office_new' %}">
+        <button type="button" onclick="showModalWin()" >Создать офис</button>
+    </a>
+
+    <!--<a href="#modal" role="button" class="btn" data-toggle="modal">Click</a>-->
+
+    </div>
+
+
+<script src="/static/js/Prokrutka.js"></script>
+
+{% endblock %}
+
+
+
